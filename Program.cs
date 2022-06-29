@@ -13,7 +13,9 @@ int x = Convert.ToInt32(Console.ReadLine());
 int y = Convert.ToInt32(Console.ReadLine());
     
     if (y==x)
-
+ {
+    Console.WriteLine ("Числа равны");}
+   
     if (x > y) 
   
     {
@@ -23,8 +25,7 @@ int y = Convert.ToInt32(Console.ReadLine());
            Console.WriteLine (y);
     }
 
-    {
-    Console.WriteLine ("Числа равны");}
+   
 
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
