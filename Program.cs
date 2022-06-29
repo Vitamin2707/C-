@@ -11,13 +11,18 @@ Console.WriteLine("(Введите число)");
 
 int x = Convert.ToInt32(Console.ReadLine());
 int y = Convert.ToInt32(Console.ReadLine());
-
+    
+    if (y==x)
 
     if (x > y) 
+  
     {
-    Console.WriteLine (x);}
+    Console.WriteLine (x);}  
+    else
+    {
+           Console.WriteLine (y);
+    }
 
-        if (y==x)
     {
     Console.WriteLine ("Числа равны");}
 
