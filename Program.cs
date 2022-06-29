@@ -6,6 +6,21 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
+
+Console.WriteLine("(Введите число)");
+
+int x = Convert.ToInt32(Console.ReadLine());
+int y = Convert.ToInt32(Console.ReadLine());
+
+
+    if (x > y) 
+    {
+    Console.WriteLine (x);}
+
+        if (y==x)
+    {
+    Console.WriteLine ("Числа равны");}
+
 // Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
 // 2, 3, 7 -> 7
