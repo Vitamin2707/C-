@@ -7,23 +7,23 @@
 // a = -9 b = -3 -> max = -3
 
 
-Console.WriteLine("(Введите число)");
+// Console.WriteLine("(Введите число)");
 
-int x = Convert.ToInt32(Console.ReadLine());
-int y = Convert.ToInt32(Console.ReadLine());
+// int x = Convert.ToInt32(Console.ReadLine());
+// int y = Convert.ToInt32(Console.ReadLine());
     
-    if (y==x)
- {
-    Console.WriteLine ("Числа равны");}
+//     if (y==x)
+//  {
+//     Console.WriteLine ("Числа равны");}
    
-    if (x > y) 
+//     if (x > y) 
   
-    {
-    Console.WriteLine (x);}  
-    else
-    {
-           Console.WriteLine (y);
-    }
+//     {
+//     Console.WriteLine (x);}  
+//     else
+//     {
+//            Console.WriteLine (y);
+//     }
 
    
 
@@ -32,6 +32,25 @@ int y = Convert.ToInt32(Console.ReadLine());
 // 2, 3, 7 -> 7
 // 44 5 78 -> 78
 // 22 3 9 -> 22
+
+
+// Console.WriteLine("(Введите число)");
+
+// int a = Convert.ToInt32(Console.ReadLine());
+// int b = Convert.ToInt32(Console.ReadLine());
+// int c = Convert.ToInt32(Console.ReadLine());
+ 
+//  if (a==b && b==c)
+//   {
+//      Console.WriteLine ("Числа равны");}
+// if (a>b && a>c) 
+//   {
+//   Console.WriteLine (a);}  
+//     else
+//     {
+//            Console.WriteLine (c);
+//                 }
+   
 
 // Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 
