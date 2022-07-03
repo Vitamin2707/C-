@@ -7,7 +7,7 @@
 // a = -9 b = -3 -> max = -3
 
 
-// Console.WriteLine("(Введите число)");
+// Console.WriteLine("Введите число");
 
 // int x = Convert.ToInt32(Console.ReadLine());
 // int y = Convert.ToInt32(Console.ReadLine());
@@ -88,22 +88,44 @@
 // 918 -> 1
 
 //  Console.WriteLine("(Введите число)");
-
+//  int num1 = Convert.ToInt32(Console.ReadLine()); 
+//  Console.WriteLine (num1/10%10);
 
 // // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
-// // 645 -> 5
+// // 645-> 5
 
 // // 78 -> третьей цифры нет
 
 // // 32679 -> 6
 
 //  Console.WriteLine("(Введите число)");
-//  Console.WriteLine ("третьего числа нет");}
+//  int num1 = Convert.ToInt32(Console.ReadLine());
+//  if (num1/100==0) 
+//  {
+//     Console.WriteLine("третьего числа нет");
+//     }
+//  else 
+//  {
+//     while (num1>999) 
+//     {num1/=10;}
+// Console.WriteLine (num1%10);
+// }
+
 
 // // Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
 // // 6 -> да
 // // 7 -> да
 // // 1 -> нет
-// Console.WriteLine("(Какой сегодня день?)");
+
+// Console.WriteLine("Какой сегодня день?");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+// if (num1==7|| num1==6)
+// {
+//     Console.WriteLine("да");
+// }
+// else
+// {
+//     Console.WriteLine("нет");
+// } 
