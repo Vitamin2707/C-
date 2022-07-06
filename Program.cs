@@ -129,3 +129,67 @@
 // {
 //     Console.WriteLine("нет");
 // } 
+
+// Задача 19
+
+// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
+// 14212 -> нет
+
+// 12821 -> да
+
+// 23432 -> да
+
+// Console.WriteLine("Введите число");
+// string num1 = Console.ReadLine();
+// string num2 = string.Empty;
+// for (int I = num1.Length-1; I>=0; I--)
+// {
+//     num2 += num1 [I];
+// }
+// if (num1==num2)
+// {
+//     Console.WriteLine ("Число является палиндромом");
+// }
+// else 
+// {
+//     Console.WriteLine ("Число не является палиндромом");
+// }
+
+
+// Задача 21
+
+// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+// A (3,6,8); B (2,1,-7), -> 15.84
+
+// A (7,-5, 0); B (1,-1,9) -> 11.53
+
+// Console.WriteLine("Введите x1");
+// int x1=Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите y1");
+// int y1=Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите z1");
+// int z1=Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите x2");
+// int x2=Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите y2");
+// int y2=Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите z2");
+// int z2=Convert.ToInt32(Console.ReadLine());
+// double lenght = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
+// Console.WriteLine (Math.Round (lenght,2));
+
+// Задача 23
+
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
+
+Console.WriteLine("Введите N");
+int N = Convert.ToInt32(Console.ReadLine());
+for (int I = 1; I<=N; I++)
+{
+Console.WriteLine(I+ " => " + Math.Pow (I , 3));
+}
