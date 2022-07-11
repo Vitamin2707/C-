@@ -256,83 +256,114 @@
 // 6, 1, 33 -> [6, 1, 33]
 
 
-Console.Write("Введите ряд чисел, разделенных запятой : ");
-string? seriesOfNumbers = Console.ReadLine();
+// Console.Write("Введите ряд чисел, разделенных запятой : ");
+// string? seriesOfNumbers = Console.ReadLine();
 
-seriesOfNumbers = seriesOfNumbers + ",";    
+// seriesOfNumbers = seriesOfNumbers + ",";    
 
-string RemovingSpaces (string series){
-  string seriesNew = "";
-  for (int i = 0; i < series.Length; i++)
-  {
-    if (series[i] != ' ') 
-    {
-      seriesNew += series[i];
-    }
-  }
-  return seriesNew;
-}
-void СheckNumber2 (int  series){
+// string RemovingSpaces (string series){
+//   string seriesNew = "";
+//   for (int i = 0; i < series.Length; i++)
+//   {
+//     if (series[i] != ' ') 
+//     {
+//       seriesNew += series[i];
+//     }
+//   }
+//   return seriesNew;
+// }
+// void СheckNumber2 (int  series){
 
-      if (series == '0'||series == '1'||series == '2'
-      ||series == '3'||series == '4'||series == '5'||series == '6'
-      ||series == '7'||series == '8'||series == '9'||series == ','
-      ||series == '-')
-      {
-      }
-        else {
-          Console.WriteLine($"Ошибка ввода  символа. Вводи цифры.");
+//       if (series == '0'||series == '1'||series == '2'
+//       ||series == '3'||series == '4'||series == '5'||series == '6'
+//       ||series == '7'||series == '8'||series == '9'||series == ','
+//       ||series == '-')
+//       {
+//       }
+//         else {
+//           Console.WriteLine($"Ошибка ввода  символа. Вводи цифры.");
 
-      }
-}
-int[] ArrayOfNumbers(string seriesNew){ 
+//       }
+// }
+// int[] ArrayOfNumbers(string seriesNew){ 
 
-  int[] arrayOfNumbers = new int[1];   
+//   int[] arrayOfNumbers = new int[1];   
 
-  int j =0;
+//   int j =0;
 
-  for (int i = 0; i < seriesNew.Length; i++){
-    string seriesNew1 = "";
+//   for (int i = 0; i < seriesNew.Length; i++){
+//     string seriesNew1 = "";
 
-    while (seriesNew[i] != ',' && i < seriesNew.Length){
-      seriesNew1 += seriesNew[i];
-      СheckNumber2(seriesNew[i]);
-      i++;
-    }
-    arrayOfNumbers[j] = Convert.ToInt32(seriesNew1);    
-    if (i < seriesNew.Length-1){
-      arrayOfNumbers = arrayOfNumbers.Concat(new int[] {0}).ToArray();    
-    }
-    j++;
-  }
-  return arrayOfNumbers;
-}
-void PrintArry(int[] coll){
-  int count = coll.Length;
-  int index = 0;
-  Console.Write("[");
-  while(index < count){
-    Console.Write(coll[index]);
-    index++;
-    if (index < count){
-      Console.Write(", ");
-    }
-  }
-  Console.Write("]");
-} 
+//     while (seriesNew[i] != ',' && i < seriesNew.Length){
+//       seriesNew1 += seriesNew[i];
+//       СheckNumber2(seriesNew[i]);
+//       i++;
+//     }
+//     arrayOfNumbers[j] = Convert.ToInt32(seriesNew1);    
+//     if (i < seriesNew.Length-1){
+//       arrayOfNumbers = arrayOfNumbers.Concat(new int[] {0}).ToArray();    
+//     }
+//     j++;
+//   }
+//   return arrayOfNumbers;
+// }
+// void PrintArry(int[] coll){
+//   int count = coll.Length;
+//   int index = 0;
+//   Console.Write("[");
+//   while(index < count){
+//     Console.Write(coll[index]);
+//     index++;
+//     if (index < count){
+//       Console.Write(", ");
+//     }
+//   }
+//   Console.Write("]");
+// } 
 
 
-string seriesNew = RemovingSpaces(seriesOfNumbers);
+// string seriesNew = RemovingSpaces(seriesOfNumbers);
 
-int[] arrayOfNumbers =  ArrayOfNumbers(seriesNew);
+// int[] arrayOfNumbers =  ArrayOfNumbers(seriesNew);
 
-PrintArry(arrayOfNumbers);
+// PrintArry(arrayOfNumbers);
 
 
 // Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
 // [345, 897, 568, 234] -> 2
 
+// Console.WriteLine("Введите размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] numbers = new int[size];
+// FillArrayRandomNumbers(numbers);
+// Console.WriteLine("Вот наш массив: ");
+// PrintArray(numbers);
+// int count = 0;
+
+// for (int z = 0; z < numbers.Length; z++)
+// if (numbers[z] % 2 == 0)
+// count++;
+
+// Console.WriteLine($"всего {numbers.Length} чисел, {count} из них чётные");
+
+// void FillArrayRandomNumbers(int[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//     {
+//         numbers[i] = new Random().Next(100,1000);
+//     }
+// }
+// void PrintArray(int[] numbers)
+// {
+//     Console.Write("[ ");
+//     for(int i = 0; i < numbers.Length; i++)
+//     {
+//         Console.Write(numbers[i] + " ");
+//     }
+//     Console.Write("]");
+//     Console.WriteLine();
+// }
 
 
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
@@ -341,6 +372,79 @@ PrintArry(arrayOfNumbers);
 
 // [-4, -6, 89, 6] -> 0
 
+// Console.WriteLine("Введите размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] numbers = new int[size];
+// FillArrayRandomNumbers(numbers);
+// Console.WriteLine("Масив: ");
+// PrintArray(numbers);
+// int sum = 0;
+
+// for (int z = 0; z < numbers.Length; z+=2)
+//     sum = sum + numbers[z];
+
+//     Console.WriteLine($"всего {numbers.Length} чисел, сумма элементов на нечётных позициях = {sum}");
+
+// void FillArrayRandomNumbers(int[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             numbers[i] = new Random().Next(1,10);
+//         }
+// }
+// void PrintArray(int[] numbers)
+// {
+//     Console.Write("[ ");
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             Console.Write(numbers[i] + " ");
+//         }
+//     Console.Write("]");
+//     Console.WriteLine();
+// }
+
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 // [3 7 22 2 78] -> 76
+
+Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
+double[] numbers = new double[size];
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("Вот наш массив: ");
+PrintArray(numbers);
+double min = Int32.MaxValue;
+double max = Int32.MinValue;
+
+for (int z = 0; z < numbers.Length; z++)
+{
+    if (numbers[z] > max)
+        {
+            max = numbers[z];
+        }
+    if (numbers[z] < min)
+        {
+            min = numbers[z];
+        }
+}
+
+Console.WriteLine($"всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
+Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
+
+void FillArrayRandomNumbers(double[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+        }
+}
+void PrintArray(double[] numbers)
+{
+    Console.Write("[ ");
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            Console.Write(numbers[i] + " ");
+        }
+    Console.Write("]");
+    Console.WriteLine();
+}
