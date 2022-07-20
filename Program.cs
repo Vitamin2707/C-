@@ -487,45 +487,356 @@
 // Задача 43. Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; 5,5)
 
-double[,] coeff = new double[2, 2];
-double[] crossPoint = new double[2];
+// double[,] coeff = new double[2, 2];
+// double[] crossPoint = new double[2];
 
-void InputCoefficients(){
-  for (int i = 0; i < coeff.GetLength(0); i++)
+// void InputCoefficients(){
+//   for (int i = 0; i < coeff.GetLength(0); i++)
+//   {
+//     Console.Write($"Введите коэффициенты {i+1}-го уравнения (y = k * x + b):\n");
+//     for (int j = 0; j < coeff.GetLength(1); j++)
+//     {
+//       if(j==0) Console.Write($"Введите коэффициент k: ");
+//       else Console.Write($"Введите коэффициент b: ");
+//       coeff[i,j] = Convert.ToInt32(Console.ReadLine());
+//     }
+//   }
+// }
+
+// double[] Decision(double[,] coeff)
+// {
+//   crossPoint[0] = (coeff[1,1] - coeff[0,1]) / (coeff[0,0] - coeff[1,0]);
+//   crossPoint[1] = crossPoint[0] * coeff[0,0] + coeff[0,1];
+//   return crossPoint;
+// }
+
+// void OutputResponse(double[,] coeff)
+// {
+//   if (coeff[0,0] == coeff[1,0] && coeff[0,1] == coeff[1,1]) 
+//   {
+//     Console.Write($"\nПрямые совпадают");
+//   }
+//   else if (coeff[0,0] == coeff[1,0] && coeff[0,1] != coeff[1,1]) 
+//   {
+//     Console.Write($"\nПрямые параллельны");
+//   }
+//   else 
+//   {
+//     Decision(coeff);
+//     Console.Write($"\nТочка пересечения прямых: ({crossPoint[0]}, {crossPoint[1]})");
+//   }
+// }
+
+// InputCoefficients();
+// OutputResponse(coeff);
+
+// Задача 47: Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
+
+// Console.WriteLine($"Задача 47: Задайте двумерный массив размером m x n, заполненный случайными вещественными числами.");
+
+// Console.Write("Введите m: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите n: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+
+// Console.Clear();
+// Console.WriteLine($"m = {m}, n = {n}.");
+
+// double[,] array = new double[m, n];
+
+// CreateArrayDouble(array);
+
+// WriteArray(array);
+
+// Console.WriteLine();
+
+// void CreateArrayDouble(double[,] array)
+// {
+//   for (int i = 0; i < m; i++)
+//   {
+//     for (int j = 0; j < n; j++)
+//     {
+//       array[i, j] = new Random().NextDouble() * 20 - 10;
+//     }
+//   }
+// }
+
+// void WriteArray (double[,] array){
+// for (int i = 0; i < m; i++)
+//   {
+//       for (int j = 0; j < n; j++)
+//       {
+//         double alignNumber = Math.Round(array[i, j], 1);
+//         Console.Write(alignNumber + " ");
+//       }
+//       Console.WriteLine();
+//   }
+// }
+
+
+// // Задача 50: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+// // Например, задан массив:
+// // 1 4 7 2
+// // 5 9 2 3
+// // 8 4 2 4
+// // 17 -> такого числа в массиве нет
+
+// Console.WriteLine($"Задача 50: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.");
+
+// Console.Write("\nMассив возьмем из предыдущей задачи (№ 47).\n");
+// Console.Write("Введите координаты позиции элемента, разделенных запятой: ");
+
+// string? positionElement = Console.ReadLine();
+// positionElement = RemovingSpaces(positionElement);
+// int[] position = ParserString(positionElement);
+
+// if(position[0] <= m 
+// && position[1] <= n 
+// && position[0] >= 0 
+// && position[1] >= 0) 
+// {
+//   double result = array[position[0]-1, position[1]-1];
+//   Console.Write($"Значение элемента: {result}");
+// }
+// else Console.Write($"такого элемента в массиве нет.");
+
+// int[] ParserString(string input)
+// {
+//   int countNumbers = 1;
+//   for (int i = 0; i < input.Length; i++)
+//   {
+//       if (input[i] == ',')
+//           countNumbers++;
+//   }
+
+//   int[] numbers = new int[countNumbers];
+
+//   int numberIndex = 0;
+//   for(int i = 0; i < input.Length; i++)
+//   {
+//     string subString = String.Empty;
+
+//     while (input[i] != ',')
+//     {
+//       subString += input[i].ToString();
+//       if (i >= input.Length - 1)
+//         break;
+//       i++;
+//     }
+//     numbers[numberIndex] = Convert.ToInt32(subString);
+//     numberIndex++;
+//   }
+
+//   return numbers;
+// }
+
+// string RemovingSpaces (string input)
+// {
+//   string output = String.Empty;
+//   for (int i = 0; i < input.Length; i++)
+//   {
+//     if (input[i] != ' ') 
+//     {
+//       output += input[i];
+//     }
+//   }
+//   return output;
+// }
+
+// Задача 52: Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3
+
+// Console.WriteLine($"\n\nЗадача 52: Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.");
+// Console.Write("\nMассив возьмем из предыдущей задачи (№ 47), преобразовав double в int32.\n");
+
+// int[,] arrayWhole = new int[m, n];
+// arrayWhole = TransformationArrayWhole(array);
+
+// WriteArrayInt(arrayWhole);
+
+// Console.Write($"\nCреднее арифметическое:\n");
+// for (int i = 0; i < n; i++)
+// {
+//   double arithmeticMean = 0;
+//   for (int j = 0; j < m; j++)
+//   {
+//     arithmeticMean += arrayWhole[j, i];
+//   }
+//   arithmeticMean = Math.Round(arithmeticMean / m, 1);
+//   Console.WriteLine($"столбца № {i+1} {arithmeticMean}");
+// }
+
+// int[,] TransformationArrayWhole (double[,] array)
+// {
+//   int[,] arrayWhole = new int[array.GetLength(0), array.GetLength(1)];
+//   for (int i = 0; i < array.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//       arrayWhole[i, j] = Convert.ToInt32(array[i, j]);
+//     }
+//   }
+//   return arrayWhole;
+// }
+
+// void WriteArrayInt (int[,] arrayWhole){
+// for (int i = 0; i < m; i++)
+//   {
+//       for (int j = 0; j < n; j++)
+//       {
+//         Console.Write(arrayWhole[i, j] + " ");
+//       }
+//       Console.WriteLine();
+//   }
+// }
+
+
+// Задача 57: Составить частотный словарь элементов двумерного массива. 
+// // Частотный словарь содержит информацию о том, сколько раз встречается элемент входных данных.
+
+// void FillArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             array[i, j] = new Random().Next(1, 10);
+//         }
+//     }
+// }
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// int m = 6;
+// int n = 6;
+// int[,] array = new int[m, n];
+
+// FillArray(array);
+// PrintArray(array);
+// Console.WriteLine();
+
+// int count = 0;
+// int[,] dictionary = new int[m * n, 2];
+// int k = 0;
+
+// bool exist = false;
+
+// for (int i = 0; i < array.GetLength(0); i++)
+// {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//         exist = false;
+//         for (int r = 0; r < k; r++)
+//         {
+//             if (dictionary[r, 0] == array[i, j])
+//             {
+//                 dictionary[r, 1]++;
+//                 exist = true;
+//                 break;
+//             }
+//         }
+//         if (exist == false)
+//         {
+//             dictionary[k, 0] = array[i, j];
+//             dictionary[k, 1]++;
+//             k++;
+//         }
+//     }
+// }
+// for (int i = 0; i < k; i++)
+// {
+//     for (int j = 0; j < dictionary.GetLength(1); j++)
+//     {
+//         Console.Write($"{dictionary[i, +j]} ");
+//     }
+//     Console.WriteLine();
+// }
+
+// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+// m = 3, n = 4.
+
+// 0,5 7 -2 -0,2
+
+// 1 -3,3 8 -9,9
+
+// 8 7,8 -7,1 9
+
+Console.WriteLine($"Задача 47: Задайте двумерный массив размером m x n, заполненный случайными вещественными числами.");
+
+Console.Write("Введите m: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите n: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+Console.Clear();
+Console.WriteLine($"m = {m}, n = {n}.");
+
+double[,] array = new double[m, n];
+
+CreateArrayDouble(array);
+
+WriteArray(array);
+
+Console.WriteLine();
+
+void CreateArrayDouble(double[,] array)
+{
+  for (int i = 0; i < m; i++)
   {
-    Console.Write($"Введите коэффициенты {i+1}-го уравнения (y = k * x + b):\n");
-    for (int j = 0; j < coeff.GetLength(1); j++)
+    for (int j = 0; j < n; j++)
     {
-      if(j==0) Console.Write($"Введите коэффициент k: ");
-      else Console.Write($"Введите коэффициент b: ");
-      coeff[i,j] = Convert.ToInt32(Console.ReadLine());
+      array[i, j] = new Random().NextDouble() * 20 - 10;
     }
   }
 }
 
-double[] Decision(double[,] coeff)
-{
-  crossPoint[0] = (coeff[1,1] - coeff[0,1]) / (coeff[0,0] - coeff[1,0]);
-  crossPoint[1] = crossPoint[0] * coeff[0,0] + coeff[0,1];
-  return crossPoint;
-}
-
-void OutputResponse(double[,] coeff)
-{
-  if (coeff[0,0] == coeff[1,0] && coeff[0,1] == coeff[1,1]) 
+void WriteArray (double[,] array){
+for (int i = 0; i < m; i++)
   {
-    Console.Write($"\nПрямые совпадают");
-  }
-  else if (coeff[0,0] == coeff[1,0] && coeff[0,1] != coeff[1,1]) 
-  {
-    Console.Write($"\nПрямые параллельны");
-  }
-  else 
-  {
-    Decision(coeff);
-    Console.Write($"\nТочка пересечения прямых: ({crossPoint[0]}, {crossPoint[1]})");
+      for (int j = 0; j < n; j++)
+      {
+        double alignNumber = Math.Round(array[i, j], 1);
+        Console.Write(alignNumber + " ");
+      }
+      Console.WriteLine();
   }
 }
 
-InputCoefficients();
-OutputResponse(coeff);
+
+
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+// Например, задан массив:
+
+// 1 4 7 2
+
+// 5 9 2 3
+
+// 8 4 2 4
+
+// 17 -> такого числа в массиве нет
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
